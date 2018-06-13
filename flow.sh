@@ -60,34 +60,21 @@ cd wp-content/themes
 
 #Clone Underscores theme
 git clone https://github.com/Automattic/underscores.me.git
-
 #change dir to underscores
 mv underscores.me $tname
-
 #move back to parent dir
 cd $tname
-
 #Make a scss dir for sass files
 mkdir scss
-
 #go into scss
 cd scss
-
-#copy file over using Curl because don't know how to do with git
+#download Avalanche.scc from Guthub
 curl -O https://github.com/colourgarden/avalanche/blob/master/_avalanche.scss
-
 #move back to parent dir
 cd ..
-
-
-#remove underscore.me dir
-#rm -rf underscores.me
-
 #Clone our gulp and package file
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
-
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
-
 #remove bash script
 rm flow.sh
 
