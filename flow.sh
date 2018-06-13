@@ -78,11 +78,14 @@ curl -O https://github.com/colourgarden/avalanche/blob/master/_avalanche.scss
 #move back to parent dir
 cd ..
 
+
 #remove underscore.me dir
 #rm -rf underscores.me
 
 #Clone our gulp file
-git clone https://github.com/rshahin/underpressass.git
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
+
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
 
 
 echo "========================="
