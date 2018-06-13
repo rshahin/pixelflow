@@ -1,7 +1,7 @@
 #!/bin/bash -e
 clear
 echo "============================================"
-echo "WordPress Install Script"
+echo "Install Wordpress, Underscores & Avalanche"
 echo "============================================"
 echo "Database Name: "
 read -e dbname
