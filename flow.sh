@@ -76,6 +76,8 @@ cd ..
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
 #remove bash script
+
+cd ../../..
 rm flow.sh
 
 echo "========================="
