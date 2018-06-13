@@ -20,22 +20,18 @@ echo "============================================"
 echo "A robot is now installing WordPress for you."
 echo "============================================"
 #download wordpress
-#curl -O https://wordpress.org/latest.tar.gz
-
-#Clone wordpress
-git clone https://github.com/WordPress/WordPress.git .
-
+curl -O https://wordpress.org/latest.tar.gz
 
 #unzip wordpress
-#tar -zxvf latest.tar.gz
+tar -zxvf latest.tar.gz
 #change dir to wordpress
-#cd wordpress
+cd wordpress
 #copy file to parent dir
-#cp -rf . ..
+cp -rf . ..
 #move back to parent dir
-#cd ..
+cd ..
 #remove files from wordpress folder
-#rm -R wordpress
+rm -R wordpress
 #create wp config
 cp wp-config-sample.php wp-config.php
 #set database details with perl find and replace
