@@ -10,7 +10,7 @@ read -e dbuser
 echo "Database Password: "
 read -s dbpass
 echo "Theme Name: "
-read -s tname
+read -e tname
 echo "run install? (y/n)"
 read -e run
 if [ "$run" == n ] ; then
@@ -50,6 +50,7 @@ perl -i -pe'
 
 #create uploads folder and set permissions
 mkdir wp-content/uploads
+
 chmod 775 wp-content/uploads
 echo "Cleaning..."
 #remove zip file
@@ -82,11 +83,13 @@ cd ..
 #remove underscore.me dir
 #rm -rf underscores.me
 
-#Clone our gulp file
+#Clone our gulp and package file
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
 
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
 
+#remove bash script
+rm flow.sh
 
 echo "========================="
 echo "Job Done."
