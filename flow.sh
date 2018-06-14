@@ -79,7 +79,7 @@ mkdir fonts
 cd scss
 
 #download Avalanche.scc from Guthub
-curl -O https://github.com/colourgarden/avalanche/blob/master/_avalanche.scss
+curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
 
 #move back to theme dir
 cd ../..
