@@ -80,8 +80,8 @@ cd scss
 
 #download Avalanche.scc and default files from Guthub
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_custom.scss
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_settings.scss
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/custom.scss
 
 #move back to theme dir
 cd ../..
