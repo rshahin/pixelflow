@@ -99,8 +99,7 @@ curl -O https://raw.githubusercontent.com/AaronAMcGuire/Optimisation-Script/mast
 #Add optimisation file to functions.php
 
 cd ..
-perl -e 'print "require get_template_directory() . '\''/inc/optimisation.php"' >> functions.php
-
+perl -e 'print "require (get_template_directory() . '\''/inc/optimisation.php'\'')"' >> functions.php
 
 #remove bash script
 cd ../../..
