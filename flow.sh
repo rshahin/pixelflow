@@ -91,6 +91,17 @@ rm -rf js
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
 
+#Clone optimisation file into /inc
+cd inc
+curl -O https://raw.githubusercontent.com/AaronAMcGuire/Optimisation-Script/master/optimisation.php
+
+
+#Add optimisation file to functions.php
+
+cd ..
+perl -e 'print "require get_template_directory() . /inc/optimisation.php"' >> functions.php
+
+
 #remove bash script
 cd ../../..
 rm flow.sh
