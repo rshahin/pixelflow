@@ -1,6 +1,10 @@
 Download and install Git.
 
-Create a .bashrc file in your user directory.
+Create a .bashrc file in your user directory.*
+
+* You can go into user directory, open git bash and then type touch .bashrc 
+
+
 
 Add the following to the file and save.
 
