@@ -65,18 +65,33 @@ mv underscores.me $tname
 #move back to parent dir
 cd $tname
 #Make a scss dir for sass files
-mkdir scss
+mkdir assets
 #go into scss
+cd assets
+
+#create assets folders
+mkdir scss
+mkdir css
+mkdir images
+mkdir fonts
+
+#Go into scss
 cd scss
+
 #download Avalanche.scc from Guthub
 curl -O https://github.com/colourgarden/avalanche/blob/master/_avalanche.scss
-#move back to parent dir
-cd ..
+
+#move back to theme dir
+cd ../..
+
+#remove js folder
+rm -rf js
+
 #Clone our gulp and package file
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
-#remove bash script
 
+#remove bash script
 cd ../../..
 rm flow.sh
 

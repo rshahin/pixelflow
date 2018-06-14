@@ -29,18 +29,18 @@
 
 // START Editing Project Variables.
 // Project related.
-var project                 = 'WPGulpTheme'; // Project Name.
-var projectURL              = 'wpgulp.dev'; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
+var project                 = ''; // Project Name.
+var projectURL              = ''; // Local project URL of your already running WordPress site. Could be something like local.dev or localhost:8888.
 var productURL              = './'; // Theme/Plugin URL. Leave it like it is, since our gulpfile.js lives in the root folder.
 
 // Translation related.
-var text_domain             = 'WPGULP'; // Your textdomain here.
-var translationFile         = 'WPGULP.pot'; // Name of the transalation file.
+var text_domain             = 'pixelflow'; // Your textdomain here.
+var translationFile         = 'pixelflow.pot'; // Name of the transalation file.
 var translationDestination  = './languages'; // Where to save the translation files.
-var packageName             = 'WPGULP'; // Package name.
-var bugReport               = 'https://AhmadAwais.com/contact/'; // Where can users report bugs.
-var lastTranslator          = 'Ahmad Awais <your_email@email.com>'; // Last translator Email ID.
-var team                    = 'WPTie <your_email@email.com>'; // Team's Email ID.
+var packageName             = 'PIXELFLOW'; // Package name.
+var bugReport               = ''; // Where can users report bugs.
+var lastTranslator          = ''; // Last translator Email ID.
+var team                    = ''; // Team's Email ID.
 
 // Style related.
 var styleSRC                = './assets/css/style.scss'; // Path to main .scss file.
