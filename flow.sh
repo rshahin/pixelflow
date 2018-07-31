@@ -89,6 +89,9 @@ cd scss
 #download Avalanche.scc and default files from Guthub
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_settings.scss
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_common.scss
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_header.scss
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_footer.scss
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/custom.scss
 
 #move back to theme dir
@@ -97,6 +100,7 @@ cd ../..
 #remove js folder
 rm -rf js
 rm -rf images
+rm -rf plugins
 
 #Clone our gulp and package file
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
@@ -105,11 +109,13 @@ curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
 #Clone optimisation file into /inc
 cd inc
 curl -O https://raw.githubusercontent.com/AaronAMcGuire/Optimisation-Script/master/optimisation.php
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/inc/enqueue-scripts.php
 
 
 #Add optimisation file to functions.php
 
 cd ..
+perl -e 'print "require (get_template_directory() . '\''/inc/enqueue-scripts.php'\'');"' >> functions.php
 perl -e 'print "require (get_template_directory() . '\''/inc/optimisation.php'\'');"' >> functions.php
 
 #remove bash script
