@@ -105,10 +105,15 @@ rm -rf js
 rm -rf sass
 rm -rf layouts
 rm -rf woocommerce.css
+rm -rf style.css
+
 
 #Clone our gulp and package file
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
+curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/style.css
+
+perl -pi -e "s/theme_name_here/$tname/g" style.css
 
 #Clone optimisation file into /inc
 cd inc
