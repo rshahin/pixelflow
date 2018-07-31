@@ -82,8 +82,6 @@ mkdir custom
 mkdir vendor
 
 cd ../..
-rm -rf images
-
 
 #Go into scss
 cd scss
@@ -98,6 +96,7 @@ cd ../..
 
 #remove js folder
 rm -rf js
+rm -rf images
 
 #Clone our gulp and package file
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
