@@ -61,7 +61,7 @@ cd wp-content/themes
 #Clone Underscores theme
 git clone https://github.com/Automattic/_s.git
 #change dir to underscores
-mv _s-master $tname
+mv _s $tname
 #move back to parent dir
 cd $tname
 #Make a scss dir for sass files
