@@ -61,7 +61,7 @@ cd wp-content/themes
 #Clone Underscores theme
 git clone https://github.com/Automattic/_s.git
 #change dir to underscores
-mv _s $tname
+mv _s-master $tname
 #move back to parent dir
 cd $tname
 #Make a scss dir for sass files
@@ -87,7 +87,7 @@ mkdir templates
 
 
 #Go into scss
-cd scss
+cd assets/scss
 
 #download Avalanche.scc and default files from Guthub
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
