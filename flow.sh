@@ -81,13 +81,10 @@ cd js
 mkdir custom
 mkdir vendor
 
-cd ../..
-
-mkdir templates
-
+cd ..
 
 #Go into scss
-cd assets/scss
+cd scss
 
 #download Avalanche.scc and default files from Guthub
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
@@ -99,6 +96,8 @@ curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/c
 
 #move back to theme dir
 cd ../..
+
+mkdir templates
 
 #remove js folder
 rm -rf js
