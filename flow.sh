@@ -114,10 +114,16 @@ curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/style.css
 
 perl -pi -e "s/theme_name_here/$tname/g" style.css
 
+rm style.css.bak
+
 #Clone optimisation file into /inc
 cd inc
 curl -O https://raw.githubusercontent.com/AaronAMcGuire/Optimisation-Script/master/optimisation.php
 
+rm -rf custom-header.php 
+rm -rf customizer.php
+rm -rf jetpack.php
+rm -rf wpcom.php
 
 #Add optimisation file to functions.php
 
