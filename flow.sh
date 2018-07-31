@@ -83,6 +83,9 @@ mkdir vendor
 
 cd ../..
 
+mkdir templates
+
+
 #Go into scss
 cd scss
 
@@ -99,8 +102,9 @@ cd ../..
 
 #remove js folder
 rm -rf js
-rm -rf images
-rm -rf plugins
+rm -rf sass
+rm -rf layouts
+rm -rf woocommerce.css
 
 #Clone our gulp and package file
 curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
@@ -109,13 +113,11 @@ curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
 #Clone optimisation file into /inc
 cd inc
 curl -O https://raw.githubusercontent.com/AaronAMcGuire/Optimisation-Script/master/optimisation.php
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/inc/enqueue-scripts.php
 
 
 #Add optimisation file to functions.php
 
 cd ..
-perl -e 'print "require (get_template_directory() . '\''/inc/enqueue-scripts.php'\'');"' >> functions.php
 perl -e 'print "require (get_template_directory() . '\''/inc/optimisation.php'\'');"' >> functions.php
 
 #remove bash script
