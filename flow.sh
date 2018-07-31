@@ -66,6 +66,7 @@ mv underscores.me $tname
 cd $tname
 #Make a scss dir for sass files
 mkdir assets
+
 #go into scss
 cd assets
 
@@ -74,6 +75,15 @@ mkdir scss
 mkdir css
 mkdir images
 mkdir fonts
+mkdir js
+
+cd js
+mkdir custom
+mkdir vendor
+
+cd ../..
+rm -rf images
+
 
 #Go into scss
 cd scss
