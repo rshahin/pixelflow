@@ -59,16 +59,15 @@ rm latest.tar.gz
 cd wp-content/themes
 
 #Clone Underscores theme
-git clone https://github.com/Automattic/_s.git
+git clone https://github.com/rshahin/pixeleton.git
 #change dir to underscores
-mv _s $tname
-#move back to parent dir
+mv pixeleton $tname
+
 cd $tname
-#Make a scss dir for sass files
-mkdir assets
-
-
 perl -pi -e "s/theme_name_here/$tname/g" style.css
+
+cd assets/scss
+curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
 
 
 #remove bash script
