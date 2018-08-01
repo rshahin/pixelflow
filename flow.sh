@@ -70,11 +70,11 @@ cd ../..
 perl -pi -e "s/theme_name_here/$tname/g" style.css
 perl -pi -e "s/theme_name_here/$tname/g" gulpfile.js
 
-
+rm style.css.bak
 
 
 #remove bash script
-cd ../../..
+cd ../..
 rm flow.sh
 
 echo "========================="
