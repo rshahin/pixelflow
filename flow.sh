@@ -67,68 +67,9 @@ cd $tname
 #Make a scss dir for sass files
 mkdir assets
 
-#go into scss
-cd assets
-
-#create assets folders
-mkdir scss
-mkdir css
-mkdir images
-mkdir fonts
-mkdir js
-
-cd js
-mkdir custom
-mkdir vendor
-
-cd ..
-
-#Go into scss
-cd scss
-
-#download Avalanche.scc and default files from Guthub
-curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_settings.scss
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_common.scss
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_header.scss
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/_footer.scss
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/assets/scss/custom.scss
-
-#move back to theme dir
-cd ../..
-
-mkdir templates
-
-#remove js folder
-rm -rf js
-rm -rf sass
-rm -rf layouts
-rm -rf woocommerce.css
-rm -rf style.css
-
-
-#Clone our gulp and package file
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/gulpfile.js
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/package.json
-curl -O https://raw.githubusercontent.com/rshahin/pixelflow/master/style.css
 
 perl -pi -e "s/theme_name_here/$tname/g" style.css
 
-rm style.css.bak
-
-#Clone optimisation file into /inc
-cd inc
-curl -O https://raw.githubusercontent.com/AaronAMcGuire/Optimisation-Script/master/optimisation.php
-
-rm -rf custom-header.php 
-rm -rf customizer.php
-rm -rf jetpack.php
-rm -rf wpcom.php
-
-#Add optimisation file to functions.php
-
-cd ..
-perl -e 'print "require (get_template_directory() . '\''/inc/optimisation.php'\'');"' >> functions.php
 
 #remove bash script
 cd ../../..
