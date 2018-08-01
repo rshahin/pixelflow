@@ -74,7 +74,7 @@ rm style.css.bak
 
 
 #remove bash script
-cd ../..
+cd ../../..
 rm flow.sh
 
 echo "========================="
