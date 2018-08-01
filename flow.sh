@@ -71,6 +71,7 @@ perl -pi -e "s/theme_name_here/$tname/g" style.css
 perl -pi -e "s/theme_name_here/$tname/g" gulpfile.js
 
 rm style.css.bak
+rm gulpfile.js.bak
 
 
 #remove bash script
