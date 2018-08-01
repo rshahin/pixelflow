@@ -63,7 +63,7 @@ git clone https://github.com/rshahin/pixeleton.git
 #change dir to underscores
 mv pixeleton $tname
 
-cd assets/scss
+cd $tname/assets/scss
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
 
 cd ../..
