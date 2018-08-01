@@ -63,11 +63,14 @@ git clone https://github.com/rshahin/pixeleton.git
 #change dir to underscores
 mv pixeleton $tname
 
-cd $tname
-perl -pi -e "s/theme_name_here/$tname/g" style.css
-
 cd assets/scss
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
+
+cd ../..
+perl -pi -e "s/theme_name_here/$tname/g" style.css
+perl -pi -e "s/theme_name_here/$tname/g" gulpfile.js
+
+
 
 
 #remove bash script
