@@ -11,6 +11,8 @@ echo "Database Password: "
 read -s dbpass
 echo "Theme Name: "
 read -e tname
+echo "Enter Pluto Password: "
+read -e plutoPassword
 echo "run install? (y/n)"
 read -e run
 if [ "$run" == n ] ; then
@@ -47,6 +49,22 @@ perl -i -pe'
   }
   s/put your unique phrase here/salt()/ge
 ' wp-config.php
+
+
+
+set -e
+
+
+mysql -uroot <<MYSQL_SCRIPT
+CREATE DATABASE $dbname;
+CREATE USER '$tname'@'localhost' IDENTIFIED BY '$dbpass';
+GRANT ALL PRIVILEGES ON $dbname.* TO '$tname'@'localhost';
+FLUSH PRIVILEGES;
+MYSQL_SCRIPT
+
+echo "MySQL user created."
+echo "Username:   $tname"
+echo "Password:   $dbpass"
 
 #create uploads folder and set permissions
 mkdir wp-content/uploads
