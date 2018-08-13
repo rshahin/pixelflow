@@ -55,7 +55,7 @@ perl -i -pe'
 set -e
 
 
-mysql -uroot <<MYSQL_SCRIPT
+mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
 CREATE DATABASE $dbname;
 CREATE USER '$tname'@'localhost' IDENTIFIED BY '$dbpass';
 GRANT ALL PRIVILEGES ON $dbname.* TO '$tname'@'localhost';
