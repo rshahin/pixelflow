@@ -107,7 +107,7 @@ set -e
 
 mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
 CREATE DATABASE wp_test;
-CREATE USER 'wp_test'@'localhost' IDENTIFIED BY '$dbpws';
+CREATE USER 'wp_test'@'localhost' IDENTIFIED BY '"$dbpws"';
 GRANT ALL PRIVILEGES ON wp_test.* TO 'wp_test'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
