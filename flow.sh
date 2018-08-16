@@ -3,6 +3,8 @@ clear
 echo "============================================"
 echo "Install Wordpress, Underscores & Avalanche"
 echo "============================================"
+echo "Site Name: "
+read -e sname
 echo "Database Name: "
 read -e dbname
 echo "Database User: "
@@ -21,6 +23,22 @@ else
 echo "============================================"
 echo "Our AI is now installing things."
 echo "============================================"
+
+
+
+#Setting up directories and permission
+
+mkdir "$sname".pixelpreview.net
+cd "$sname".pixelpreview.net
+
+mkdir config
+mkdir public
+
+cd public
+mkdir htdocs
+
+cd htdocs
+
 #download wordpress
 curl -O https://wordpress.org/latest.tar.gz
 #unzip wordpress
@@ -82,18 +100,18 @@ rm flow.sh
 
 
 
-set -e
+#set -e
 
-mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
-CREATE DATABASE $dbname;
-CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass';
-GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'localhost';
-FLUSH PRIVILEGES;
-MYSQL_SCRIPT
+#mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
+#CREATE DATABASE $dbname;
+#CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass';
+#GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'localhost';
+#FLUSH PRIVILEGES;
+#MYSQL_SCRIPT
 
-echo "MySQL db/user created."
-echo "Username:   $dbuser"
-echo "Password:   $dbpass"
+#echo "MySQL db/user created."
+#echo "Username:   $dbuser"
+#echo "Password:   $dbpass"
 
 
 
