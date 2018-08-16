@@ -130,7 +130,3 @@ fi
 
 
 END
-#ssh admin@10.0.0.73
-
-#Setting up directories and permission
-
