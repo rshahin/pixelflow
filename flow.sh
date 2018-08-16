@@ -1,4 +1,5 @@
 #!/bin/bash -e
+ssh admin@10.0.0.73 <<"END"
 clear
 echo "============================================"
 echo "Install Wordpress, Underscores & Avalanche"
@@ -23,9 +24,6 @@ else
 echo "============================================"
 echo "Our AI is now installing things."
 echo "============================================"
-
-
-ssh admin@10.0.0.73 <<"END"
 
 #ssh admin@10.0.0.73
 
@@ -130,5 +128,5 @@ rm flow.sh
 echo "========================="
 echo "Job Done."
 echo "========================="
-END
 fi
+END
