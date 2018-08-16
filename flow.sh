@@ -55,7 +55,7 @@ rm -R wordpress
 #create wp config
 
 #generate password  
-dbpws=$RANDOM
+dbpws=$(pwgen -s -1 14)
 
 cp wp-config-sample.php wp-config.php
 #set database details with perl find and replace
@@ -75,22 +75,25 @@ perl -i -pe'
 
 #create uploads folder and set permissions
 mkdir wp-content/uploads
+sudo chmod 775 wp-content/uploads
 
-chmod 775 wp-content/uploads
 echo "Cleaning..."
-#remove zip file
+
+#remove wp zip file
 rm latest.tar.gz
 
-cd wp-content/themes
-
 #Clone Underscores theme
+cd wp-content/themes
 git clone https://github.com/rshahin/pixeleton.git
+
 #change dir to underscores
 mv pixeleton "$sname"-theme
 
+#get Avalance scss
 cd "$sname"-theme/assets/scss
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
 
+#update style and gulpfile
 cd ../..
 perl -pi -e "s/theme_name_here/"$sname"-theme/g" style.css
 perl -pi -e "s/theme_name_here/"$sname"-theme/g" gulpfile.js
@@ -104,6 +107,8 @@ cd ../../..
 rm -rf flow.sh
 
 set -e
+
+#generate db/user/pass
 
 mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
 CREATE DATABASE wp_$sname;
