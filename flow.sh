@@ -27,7 +27,11 @@ echo "============================================"
 
 ssh admin@10.0.0.73 <<"END"
 
-  mkdir "$sname".pixelpreview.net
+#ssh admin@10.0.0.73
+
+#Setting up directories and permission
+
+mkdir "$sname".pixelpreview.net
 
 cd "$sname".pixelpreview.net
 
@@ -126,5 +130,5 @@ rm flow.sh
 echo "========================="
 echo "Job Done."
 echo "========================="
-fi
 END
+fi
