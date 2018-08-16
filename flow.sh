@@ -95,8 +95,8 @@ cd ../..
 perl -pi -e "s/theme_name_here/"$sname"-theme/g" style.css
 perl -pi -e "s/theme_name_here/"$sname"-theme/g" gulpfile.js
 
-rm style.css.bak
-rm gulpfile.js.bak
+#rm style.css.bak
+#rm gulpfile.js.bak
 
 
 #remove bash script
@@ -106,9 +106,9 @@ rm flow.sh
 set -e
 
 mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
-CREATE DATABASE wp_"$sname";
-CREATE USER 'wp_"$sname"'@'localhost' IDENTIFIED BY '"$dbpws"';
-GRANT ALL PRIVILEGES ON wp_"$sname".* TO 'wp_"$sname"'@'localhost';
+CREATE DATABASE wp_$sname;
+CREATE USER 'wp_$sname'@'localhost' IDENTIFIED BY '$dbpws';
+GRANT ALL PRIVILEGES ON wp_$sname.* TO 'wp_$sname'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
