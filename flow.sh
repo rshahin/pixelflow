@@ -13,7 +13,7 @@ echo "Database Password: "
 read -s dbpass
 echo "Theme Name: "
 read -e tname
-echo "Enter MySQL Password: "
+echo "Enter Pluto Password: "
 read -e plutoPassword
 echo "run install? (y/n)"
 read -e run
@@ -24,18 +24,25 @@ echo "============================================"
 echo "Our AI is now installing things."
 echo "============================================"
 
-
+ssh admin@10.0.0.73
 
 #Setting up directories and permission
 
-mkdir "$sname".pixelpreview.net
-cd "$sname".pixelpreview.net
+#mkdir "$sname".pixelpreview.net
+#cd "$sname".pixelpreview.net
 
 mkdir config
 mkdir public
 
 cd public
 mkdir htdocs
+sudo chown admin:www-data htdocs
+
+sudo chown -R www-data:www-data htdocs/*
+
+sudo chmod -R 664 htdocs
+
+sudo chmod -R +X htdocs
 
 cd htdocs
 
