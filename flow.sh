@@ -24,11 +24,12 @@ echo "============================================"
 echo "Our AI is now installing things."
 echo "============================================"
 
-ssh admin@10.0.0.73
+#ssh admin@10.0.0.73
 
 #Setting up directories and permission
 
 #mkdir "$sname".pixelpreview.net
+
 cd babyteeth.pixelpreview.net/public
 
 #mkdir config
