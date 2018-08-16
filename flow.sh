@@ -1,5 +1,4 @@
 #!/bin/bash -e
-ssh admin@10.0.0.73 <<"END"
 clear
 echo "============================================"
 echo "Install Wordpress, Underscores & Avalanche"
@@ -110,18 +109,18 @@ rm flow.sh
 
 
 
-#set -e
+set -e
 
-#mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
-#CREATE DATABASE $dbname;
-#CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass';
-#GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'localhost';
-#FLUSH PRIVILEGES;
-#MYSQL_SCRIPT
+mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
+CREATE DATABASE $dbname;
+CREATE USER '$dbuser'@'localhost' IDENTIFIED BY '$dbpass';
+GRANT ALL PRIVILEGES ON $dbname.* TO '$dbuser'@'localhost';
+FLUSH PRIVILEGES;
+MYSQL_SCRIPT
 
-#echo "MySQL db/user created."
-#echo "Username:   $dbuser"
-#echo "Password:   $dbpass"
+echo "MySQL db/user created."
+echo "Username:   $dbuser"
+echo "Password:   $dbpass"
 
 
 
@@ -129,4 +128,3 @@ echo "========================="
 echo "Job Done."
 echo "========================="
 fi
-END
