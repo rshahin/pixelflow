@@ -28,15 +28,15 @@ echo "============================================"
 
 #Setting up directories and permission
 
-#mkdir "$sname".pixelpreview.net
+mkdir "$sname".pixelpreview.net
 
-#cd babyteeth.pixelpreview.net/public
+cd "$sname".pixelpreview.net
 
-#mkdir config
-#mkdir public
+mkdir config
+mkdir public
 
-#cd public
-#mkdir htdocs
+cd public
+mkdir htdocs
 
 sudo chown admin:www-data htdocs
 
