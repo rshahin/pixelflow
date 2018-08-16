@@ -106,9 +106,9 @@ rm flow.sh
 set -e
 
 mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
-CREATE DATABASE wp_test;
-CREATE USER 'wp_test'@'localhost' IDENTIFIED BY '"$dbpws"';
-GRANT ALL PRIVILEGES ON wp_test.* TO 'wp_test'@'localhost';
+CREATE DATABASE wp_"$sname";
+CREATE USER 'wp_"$sname"'@'localhost' IDENTIFIED BY '"$dbpws"';
+GRANT ALL PRIVILEGES ON wp_"$sname".* TO 'wp_"$sname"'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
