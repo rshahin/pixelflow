@@ -55,12 +55,12 @@ rm -R wordpress
 #create wp config
 
 #generate password  
-dbpws = pwgen -s -1 14
+dbpws=$RANDOM
 
 cp wp-config-sample.php wp-config.php
 #set database details with perl find and replace
-perl -pi -e "s/database_name_here/db_$tname/g" wp-config.php
-perl -pi -e "s/username_here/db_$tname/g" wp-config.php
+perl -pi -e "s/database_name_here/wp_$tname/g" wp-config.php
+perl -pi -e "s/username_here/wp_$tname/g" wp-config.php
 perl -pi -e "s/password_here/$dbpws/g" wp-config.php
 
 #set WP salts
@@ -107,13 +107,13 @@ set -e
 
 mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
 CREATE DATABASE wp_$tname;
-CREATE USER 'db_$tname'@'localhost' IDENTIFIED BY '$dbpws';
-GRANT ALL PRIVILEGES ON db_$tname.* TO 'db_$tname'@'localhost';
+CREATE USER 'wp_$tname'@'localhost' IDENTIFIED BY '$dbpws';
+GRANT ALL PRIVILEGES ON wp_$tname.* TO 'wp_$tname'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
 echo "MySQL db/user created."
-echo "Username:   db_$tname"
+echo "Username:   wp_$tname"
 echo "Password:   $dbpws"
 
 
