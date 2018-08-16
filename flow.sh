@@ -25,7 +25,7 @@ echo "Our AI is now installing things."
 echo "============================================"
 
 
-ssh ssh admin@10.0.0.73 <<"END"
+ssh admin@10.0.0.73 <<"END"
 
   mkdir "$sname".pixelpreview.net
 
