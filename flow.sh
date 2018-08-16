@@ -59,8 +59,8 @@ dbpws=$RANDOM
 
 cp wp-config-sample.php wp-config.php
 #set database details with perl find and replace
-perl -pi -e "s/database_name_here/wp_'$sname'/g" wp-config.php
-perl -pi -e "s/username_here/wp_'$sname'/g" wp-config.php
+perl -pi -e "s/database_name_here/wp_"$sname"/g" wp-config.php
+perl -pi -e "s/username_here/wp_"$sname"/g" wp-config.php
 perl -pi -e "s/password_here/$dbpws/g" wp-config.php
 
 #set WP salts
@@ -86,14 +86,14 @@ cd wp-content/themes
 #Clone Underscores theme
 git clone https://github.com/rshahin/pixeleton.git
 #change dir to underscores
-mv pixeleton '$sname'-theme
+mv pixeleton "$sname"-theme
 
-cd '$sname'-theme/assets/scss
+cd "$sname"-theme/assets/scss
 curl -O https://raw.githubusercontent.com/colourgarden/avalanche/master/_avalanche.scss
 
 cd ../..
-perl -pi -e "s/theme_name_here/'$sname'-theme/g" style.css
-perl -pi -e "s/theme_name_here/'$sname'-theme/g" gulpfile.js
+perl -pi -e "s/theme_name_here/"$sname"-theme/g" style.css
+perl -pi -e "s/theme_name_here/"$sname"-theme/g" gulpfile.js
 
 rm style.css.bak
 rm gulpfile.js.bak
@@ -106,14 +106,14 @@ rm flow.sh
 set -e
 
 mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
-CREATE DATABASE wp_$sname;
-CREATE USER 'wp_$sname'@'localhost' IDENTIFIED BY '$dbpws';
-GRANT ALL PRIVILEGES ON wp_$sname.* TO 'wp_$sname'@'localhost';
+CREATE DATABASE wp_"$sname";
+CREATE USER 'wp_"$sname"'@'localhost' IDENTIFIED BY '$dbpws';
+GRANT ALL PRIVILEGES ON wp_"$sname".* TO 'wp_"$sname"'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
 echo "MySQL db/user created."
-echo "Username:   wp_$sname"
+echo "Username:   wp_"$sname""
 echo "Password:   $dbpws"
 
 
