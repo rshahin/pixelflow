@@ -24,11 +24,10 @@ echo "============================================"
 echo "Our AI is now installing things."
 echo "============================================"
 
-#ssh admin@10.0.0.73
 
-#Setting up directories and permission
+ssh ssh admin@10.0.0.73 <<"END"
 
-mkdir "$sname".pixelpreview.net
+  mkdir "$sname".pixelpreview.net
 
 cd "$sname".pixelpreview.net
 
@@ -128,3 +127,10 @@ echo "========================="
 echo "Job Done."
 echo "========================="
 fi
+
+
+END
+#ssh admin@10.0.0.73
+
+#Setting up directories and permission
+
