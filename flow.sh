@@ -101,7 +101,7 @@ perl -pi -e "s/theme_name_here/"$sname"-theme/g" gulpfile.js
 
 #remove bash script
 cd ../../..
-rm flow.sh
+rm -rf flow.sh
 
 set -e
 
