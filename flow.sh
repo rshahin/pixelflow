@@ -29,13 +29,14 @@ ssh admin@10.0.0.73
 #Setting up directories and permission
 
 #mkdir "$sname".pixelpreview.net
-#cd "$sname".pixelpreview.net
+cd babyteeth.pixelpreview.net/public
 
-mkdir config
-mkdir public
+#mkdir config
+#mkdir public
 
-cd public
-mkdir htdocs
+#cd public
+#mkdir htdocs
+
 sudo chown admin:www-data htdocs
 
 sudo chown -R www-data:www-data htdocs/*
