@@ -30,7 +30,7 @@ echo "============================================"
 
 #mkdir "$sname".pixelpreview.net
 
-cd babyteeth.pixelpreview.net/public
+#cd babyteeth.pixelpreview.net/public
 
 #mkdir config
 #mkdir public
