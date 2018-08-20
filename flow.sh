@@ -55,7 +55,7 @@ rm -R wordpress
 #create wp config
 
 #generate password  
-dbpws=$(pwgen -s -1 14)
+dbpws="$(openssl rand -base64 12)"
 
 cp wp-config-sample.php wp-config.php
 #set database details with perl find and replace
@@ -112,7 +112,7 @@ set -e
 
 mysql -u root -p"$plutoPassword"  <<MYSQL_SCRIPT
 CREATE DATABASE wp_$sname;
-CREATE USER 'wp_$sname'@'localhost' IDENTIFIED BY '"$dbpws"';
+CREATE USER 'wp_$sname'@'localhost' IDENTIFIED BY '${dbpws}';
 GRANT ALL PRIVILEGES ON wp_$sname.* TO 'wp_$sname'@'localhost';
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
